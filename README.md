@@ -69,10 +69,10 @@ given and input it will excecute A, then the result will be the input to execute
 
 ## Changelog
 
-### v0.1.1 [PATCH]
+### v1.0.1 [PATCH]
  - Fix package errors for NPM publish
 
-### v0.1
+### v1.0.0
  - Introduced `pipe` function
  - Introduced `tap` function
  - Introduced `conditional` function
