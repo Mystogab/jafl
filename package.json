@@ -1,8 +1,9 @@
 {
   "name": "jafl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Just Antoher Functional Library",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
