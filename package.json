@@ -13,7 +13,12 @@
     "programming",
     "pipe",
     "declarative",
-    "kiss"
+    "kiss",
+    "curry",
+    "placeholder",
+    "tap",
+    "conditional",
+    "composition"
   ],
   "author": "Gabriel Desimone (gabriel.desimone@mail.com)",
   "license": "Apache-2.0",
