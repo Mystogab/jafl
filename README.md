@@ -69,6 +69,10 @@ given and input it will excecute A, then the result will be the input to execute
 
 ## Changelog
 
+### v1.0.2 [PATCH]
+ - Fix package version on changelog
+ - Add package keywords
+
 ### v1.0.1 [PATCH]
  - Fix package errors for NPM publish
 

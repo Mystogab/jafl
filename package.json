@@ -8,7 +8,13 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "functional",
+    "programming",
+    "pipe",
+    "declarative",
+    "kiss"
+  ],
   "author": "Gabriel Desimone (gabriel.desimone@mail.com)",
   "license": "Apache-2.0",
   "devDependencies": {
