@@ -67,7 +67,34 @@ And what we are doing in here is telling in a declarative way:
 This whole process happens in a pipe, where input flow from left to right. So if we got: A, B and C, and then we define pipe as P where P = P(A, B, C), P will be a function that 
 given and input it will excecute A, then the result will be the input to execute B, and finally the result will be the input of C, so the finall result would be C(B(A(input))) equivalent.
 
+### Curry Sample
+Currying is a bit hard to understand but sometime when you are using a pipe you most likely will need to "trick" some function to be prefilled with a first argument and have a function that only receive the rest of the parameters, well that when curry kicks in.
+
+```typescript
+const sendEmail = ; // we have this implemented and has the following signature: (to: string, topic: string, message: string)
+const sendEmailWithCurry = curry(sendEmail);
+const sendElonWithCurry = sendEmailWithCurry(_, _, 'You are fired!'); // now this function is prefilled with the third argument, message.
+
+const sendElonMsg = (users: [User]) => {
+  const process = pipe(
+    conditional(IHaveTheRightMood, pipe(
+      tap(logEmailSended),
+      (user: User) => user.mailAdress, // Spoiler: to be replaced by a function soon
+      sendElonWithCurry(_, 'I Have a lovely message for you') // Now is filled with message, and topic, so it will return a function that receive a "to" and excecute the original function
+    ))
+  );
+
+  await Promise.all(users.map(process));
+}
+```
+
 ## Changelog
+
+### v1.1.0 [FEATURE]
+- feature: introduce `curry` function
+- feature: introduce `_` placeholder for using with curry
+- feature: add unit test for `curry` and its placeholder `_`
+- fix: reintroduce transpile step in workflow
 
 ### v1.0.4 [PATH]
 - Trying to get github workflow to work
