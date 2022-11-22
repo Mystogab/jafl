@@ -1,6 +1,6 @@
 {
   "name": "jafl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Just Antoher Functional Library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
