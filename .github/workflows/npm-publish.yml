@@ -34,4 +34,4 @@ jobs:
       # - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: echo $NPM_TOKEN && yarn publish
+      - run: echo $NPM_AUTH_TOKEN && yarn publish
