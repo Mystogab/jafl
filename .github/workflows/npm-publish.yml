@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'yarn'
       - run: yarn install --frozen-lockfile
       - run: yarn build
 
@@ -27,11 +28,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'yarn'
           registry-url: https://registry.npmjs.org/
       - run: yarn install --frozen-lockfile
-      - run: |
-          echo @Mystogab:https://npm.pkg.github.com/ > build/.npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
       - run: npm publish --access public ./
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
