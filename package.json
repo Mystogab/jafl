@@ -21,9 +21,6 @@
     "type": "git",
     "url": "https://github.com/Mystogab/jafl.git"
   },
-  "publishConfig": { 
-    "@Mystogab:registry": "https://registry.npmjs.org/"
-  },
   "devDependencies": {
     "typescript": "^4.9.3"
   }
