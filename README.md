@@ -69,6 +69,9 @@ given and input it will excecute A, then the result will be the input to execute
 
 ## Changelog
 
+### v1.0.4 [PATH]
+- Trying to get github workflow to work
+
 ### v1.0.3 [PATCH]
  - Add missing github repo to package.json
  - Add github worflow
