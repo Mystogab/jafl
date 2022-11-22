@@ -29,6 +29,9 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: yarn install --frozen-lockfile
-      - run: npm publish --access public
+      - run: |
+          echo @Mystogab:https://npm.pkg.github.com/ > build/.npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
+      - run: npm publish --access public ./
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
