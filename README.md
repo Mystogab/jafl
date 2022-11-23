@@ -45,7 +45,7 @@ or:
 > const obj = { name: 'Some', address: { number: 33, isReal: false }};
 > 
 > prop('name')(obj); // -> 'Some'
-> prop('adress.number') // -> 33
+> prop('adress.number')(obj) // -> 33
 > ```
  
 
@@ -83,10 +83,13 @@ given and input it will excecute A, then the result will be the input to execute
 
 ## Changelog
 
+### v1.1.1 [PATCH]
+- Fix documentation typo
+
 ### v1.1.0 [FEATURE]
 - Introduced `take` function
 
-### v1.0.4 [PATH]
+### v1.0.4 [PATCH]
 - Trying to get github workflow to work
 
 ### v1.0.3 [PATCH]
