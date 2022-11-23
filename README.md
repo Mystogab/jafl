@@ -35,6 +35,20 @@ or:
 > to input is true, then return conditionalAppliedFn(input), and if it is false, it
 > will return the input without applying any function
 
+`take`
+>
+> It takes a key that could be a string like 'name', or a chained access like: 'address.number'
+> and return a function that takes an object and return the value of that key.
+>
+> i.e:
+> ```typescript
+> const obj = { name: 'Some', address: { number: 33, isReal: false }};
+> 
+> prop('name')(obj); // -> 'Some'
+> prop('adress.number')(obj) // -> 33
+> ```
+ 
+
 ## Sample
 So let asume you have something like:
 ```javascript
@@ -90,13 +104,19 @@ const sendElonMsg = (users: [User]) => {
 
 ## Changelog
 
-### v1.1.0 [FEATURE]
+### v1.2.0 [FEATURE]
 - feature: introduce `curry` function
 - feature: introduce `_` placeholder for using with curry
 - feature: add unit test for `curry` and its placeholder `_`
 - fix: reintroduce transpile step in workflow
 
-### v1.0.4 [PATH]
+### v1.1.1 [PATCH]
+- Fix documentation typo
+
+### v1.1.0 [FEATURE]
+- Introduced `take` function
+
+### v1.0.4 [PATCH]
 - Trying to get github workflow to work
 
 ### v1.0.3 [PATCH]
