@@ -36,3 +36,25 @@ export const conditional = (
   condtionalCheckFn: Function,
   conditionalAppliedFn: Function
   ) => async (input: any) => (await condtionalCheckFn(await input)) ? conditionalAppliedFn(await input) : input;
+
+/**
+ * It takes a key that could be a string like 'name', or a chained access like: 'address.number'
+ * and return a function that takes an object and return the value of that key.
+ * 
+ * i.e: 
+ * obj = { name: 'Some', address: { number: 33, isReal: false }};
+ * 
+ * prop('name')(obj) // -> 'Some'
+ * 
+ * prop('adress.number') // -> 33
+ * @param key The key or the key path that you want to take
+ * @returns {Function} A function that takes and object and return the value of the given key
+ */
+export const take = (key: string) => (input: any) => {
+  if (!key) return undefined;
+  if (!key.includes('.')) return input?.[key];
+
+  const propList = key.split('.');
+  return propList
+    .reduce((p: any, a: any) => (typeof p === 'string') ? input?.[p]?.[a] : p?.[a]);
+};
