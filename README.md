@@ -35,6 +35,20 @@ or:
 > to input is true, then return conditionalAppliedFn(input), and if it is false, it
 > will return the input without applying any function
 
+`take`
+>
+> It takes a key that could be a string like 'name', or a chained access like: 'address.number'
+> and return a function that takes an object and return the value of that key.
+>
+> i.e:
+> ```typescript
+> const obj = { name: 'Some', address: { number: 33, isReal: false }};
+> 
+> prop('name')(obj); // -> 'Some'
+> prop('adress.number') // -> 33
+> ```
+ 
+
 ## Sample
 So let asume you have something like:
 ```javascript
@@ -68,6 +82,9 @@ This whole process happens in a pipe, where input flow from left to right. So if
 given and input it will excecute A, then the result will be the input to execute B, and finally the result will be the input of C, so the finall result would be C(B(A(input))) equivalent.
 
 ## Changelog
+
+### v1.1.0 [FEATURE]
+- Introduced `take` function
 
 ### v1.0.4 [PATH]
 - Trying to get github workflow to work
