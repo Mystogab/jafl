@@ -47,7 +47,10 @@ or:
 > prop('name')(obj); // -> 'Some'
 > prop('adress.number')(obj) // -> 33
 > ```
- 
+
+`curry`
+
+> see [curry sample](#curry-sample)
 
 ## Sample
 So let asume you have something like:
