@@ -85,6 +85,8 @@ This whole process happens in a pipe, where input flow from left to right. So if
 given and input it will excecute A, then the result will be the input to execute B, and finally the result will be the input of C, so the finall result would be C(B(A(input))) equivalent.
 
 ### Curry Sample
+_This curry implementation works thanks to [@cbroeren](https://www.github.com/cbroeren) code (thank you!)_
+
 Currying is a bit hard to understand but sometime when you are using a pipe you most likely will need to "trick" some function to be prefilled with a first argument and have a function that only receive the rest of the parameters, well that when curry kicks in.
 
 ```typescript
@@ -95,8 +97,8 @@ const sendElonWithCurry = sendEmailWithCurry(_, _, 'You are fired!'); // now thi
 const sendElonMsg = (users: [User]) => {
   const process = pipe(
     conditional(IHaveTheRightMood, pipe(
-      tap(logEmailSended),
-      (user: User) => user.mailAdress, // Spoiler: to be replaced by a function soon
+      tap(logEmailSendtTriggered),
+      take('emailAddress'),
       sendElonWithCurry(_, 'I Have a lovely message for you') // Now is filled with message, and topic, so it will return a function that receive a "to" and excecute the original function
     ))
   );
@@ -108,10 +110,9 @@ const sendElonMsg = (users: [User]) => {
 ## Changelog
 
 ### v1.2.0 [FEATURE]
-- feature: introduce `curry` function
-- feature: introduce `_` placeholder for using with curry
-- feature: add unit test for `curry` and its placeholder `_`
-- fix: reintroduce transpile step in workflow
+- Introduced `curry` function
+- Introduce `_` placeholder for using with curry
+- Add unit test for `curry` and its placeholder `_`
 
 ### v1.1.1 [PATCH]
 - Fix documentation typo
