@@ -47,7 +47,10 @@ or:
 > prop('name')(obj); // -> 'Some'
 > prop('adress.number')(obj) // -> 33
 > ```
- 
+
+`curry`
+
+> see [curry sample](#curry-sample)
 
 ## Sample
 So let asume you have something like:
@@ -81,7 +84,35 @@ And what we are doing in here is telling in a declarative way:
 This whole process happens in a pipe, where input flow from left to right. So if we got: A, B and C, and then we define pipe as P where P = P(A, B, C), P will be a function that 
 given and input it will excecute A, then the result will be the input to execute B, and finally the result will be the input of C, so the finall result would be C(B(A(input))) equivalent.
 
+### Curry Sample
+_This curry implementation works thanks to [@cbroeren](https://www.github.com/cbroeren) code (thank you!)_
+
+Currying is a bit hard to understand but sometime when you are using a pipe you most likely will need to "trick" some function to be prefilled with a first argument and have a function that only receive the rest of the parameters, well that when curry kicks in.
+
+```typescript
+const sendEmail = ; // we have this implemented and has the following signature: (to: string, topic: string, message: string)
+const sendEmailWithCurry = curry(sendEmail);
+const sendElonWithCurry = sendEmailWithCurry(_, _, 'You are fired!'); // now this function is prefilled with the third argument, message.
+
+const sendElonMsg = (users: [User]) => {
+  const process = pipe(
+    conditional(IHaveTheRightMood, pipe(
+      tap(logEmailSendtTriggered),
+      take('emailAddress'),
+      sendElonWithCurry(_, 'I Have a lovely message for you') // Now is filled with message, and topic, so it will return a function that receive a "to" and excecute the original function
+    ))
+  );
+
+  await Promise.all(users.map(process));
+}
+```
+
 ## Changelog
+
+### v1.2.0 [FEATURE]
+- Introduced `curry` function
+- Introduce `_` placeholder for using with curry
+- Add unit test for `curry` and its placeholder `_`
 
 ### v1.1.1 [PATCH]
 - Fix documentation typo

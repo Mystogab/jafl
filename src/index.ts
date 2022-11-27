@@ -50,7 +50,7 @@ export const conditional = (
  * @param key The key or the key path that you want to take
  * @returns {Function} A function that takes and object and return the value of the given key
  */
-export const take = (key: string) => (input: any) => {
+ export const take = (key: string) => (input: any) => {
   if (!key) return undefined;
   if (!key.includes('.')) return input?.[key];
 
@@ -58,3 +58,36 @@ export const take = (key: string) => (input: any) => {
   return propList
     .reduce((p: any, a: any) => (typeof p === 'string') ? input?.[p]?.[a] : p?.[a]);
 };
+
+/**
+ * Placeholder for curry functions
+ */
+export const _ = Symbol();
+
+/**
+ * It takes a functions and return a curried version of that function
+ * see https://en.wikipedia.org/wiki/Currying
+ * @param functionToCurry The input function that will be curried
+ * @returns {Function} Curried equivalent function
+ */
+export const curry = (functionToCurry: Function, numberOfArguments = functionToCurry.length) => {
+  const waitForArguments = (...attrs: any[]) => {
+    const waitForMoreArguments = (...nextAttrs: any[]) => {
+      const filledAttrs = attrs.map(attr => {
+        // if any of attrs is placeholder _, nextAttrs should first fill that
+        return attr === _ && nextAttrs.length ?
+          nextAttrs.shift() :
+          attr;
+      });
+      return waitForArguments(...filledAttrs, ...nextAttrs);
+    };
+
+    // wait for all arguments to be present and not skipped
+    return attrs.filter(arg => arg !== _).length >= numberOfArguments ?
+      functionToCurry(...attrs) :
+      waitForMoreArguments;
+  };
+
+  return waitForArguments;
+};
+
