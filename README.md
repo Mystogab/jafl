@@ -40,12 +40,15 @@ or:
 > It takes a key that could be a string like 'name', or a chained access like: 'address.number'
 > and return a function that takes an object and return the value of that key.
 >
+> In addition it can take multiple of this keys as multiple arguments, and in that case
+> it will return an array with every value in the same order as requested
 > i.e:
 > ```typescript
 > const obj = { name: 'Some', address: { number: 33, isReal: false }};
 > 
-> prop('name')(obj); // -> 'Some'
-> prop('adress.number')(obj) // -> 33
+> take('name')(obj); // -> 'Some'
+> take('address.number')(obj) // -> 33
+> take('address.number', 'id', 'name')(obj) // -> [33, undefined, 'Some']
 > ```
 
 `curry`
@@ -108,6 +111,12 @@ const sendElonMsg = (users: [User]) => {
 ```
 
 ## Changelog
+
+### v2.0.0
+- BREAKING CHANGE:
+  - `take` function signature now can receive multiple string "keys" and will return an array with same-order-as-requested values over an object. see [take](#usage)
+- Add unit test to `take` function
+- Fixed some documentation typos
 
 ### v1.2.0 [FEATURE]
 - Introduced `curry` function
