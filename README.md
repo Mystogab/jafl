@@ -55,6 +55,17 @@ or:
 
 > see [curry sample](#curry-sample)
 
+`applier`
+>
+> It takes a function (fn) and return a function that receive a list of arguments
+> in an array-like format and call fn with those args as it was a non array receiving function
+i.e:
+```typescript
+const greeter = (greetMsg: string, userName: string) => `Hey, ${greetMsg} ${userName}!`;
+
+applier(greeter)(['hello there', 'fellow friend']); // -> 'Hey, hello there fellow friend!' 
+```
+
 ## Sample
 So let asume you have something like:
 ```javascript
@@ -111,6 +122,9 @@ const sendElonMsg = (users: [User]) => {
 ```
 
 ## Changelog
+
+### v2.1.0
+- Introduced `applier` function
 
 ### v2.0.0
 - BREAKING CHANGE:
