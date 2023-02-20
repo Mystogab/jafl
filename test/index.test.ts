@@ -1,4 +1,4 @@
-import { _, curry, take } from '../src/index';
+import { _, curry, pick } from '../src/index';
 
 describe('using curry', () => {
   test('It should give the same result in any combination', () => {
@@ -40,7 +40,7 @@ describe('using curry', () => {
   });
 });
 
-describe('using take', () => {
+describe('using pick', () => {
   test('it should work properly', () => {
     const obj = {
       name: 'Someone',
@@ -58,14 +58,14 @@ describe('using take', () => {
       }
     };
 
-    expect(take('address.number', 'some.very.nested.property')(obj))
+    expect(pick('address.number', 'some.very.nested.property')(obj))
       .toEqual([ 1212, 'foo']);
 
-    expect(take('name')(obj)).toBe('Someone');
+    expect(pick('name')(obj)).toBe('Someone');
 
-    expect(take('address.name')(obj)).toBe('fakestreet');
+    expect(pick('address.name')(obj)).toBe('fakestreet');
 
-    expect(take('address.name', 'age')(obj))
+    expect(pick('address.name', 'age')(obj))
       .toEqual(['fakestreet', 99]);
   });
 });

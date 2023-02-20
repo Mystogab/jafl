@@ -1,3 +1,14 @@
+### v3.0.0
+- <b>BREAKING CHANGE</b>:
+  - `take` now is `pick` to keep coherence with other libraries
+- Pump up dev dependencies
+- Modular refactor: split each function in their own file
+- Feature: it should be tree-shakeable now
+- Test: Add tap test
+- Add `engine` requirement to Node >= 17
+- updated readme & changelog
+- improve docs a bit
+- included new section of "next breaking change"
 
 ### v2.1.0
 - Introduced `applier` function
@@ -5,8 +16,8 @@
 - Pump up dev dependencies
 - Minnor docs improvements
 
-### v2.0.0
-- BREAKING CHANGE:
+### v2.0.0  
+- <b>BREAKING CHANGE</b>:
   - `take` function signature now can receive multiple string "keys" and will return an array with same-order-as-requested values over an object. see [take](#usage)
 - Add unit test to `take` function
 - Fixed some documentation typos
