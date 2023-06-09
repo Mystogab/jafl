@@ -1,3 +1,6 @@
+### v3.0.1
+- <b>HOTFIX</b>: Fixed an important error that prevents correctly importing the library.
+
 ### v3.0.0
 - <b>BREAKING CHANGE</b>:
   - `take` now is `pick` to keep coherence with other libraries

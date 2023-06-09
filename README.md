@@ -6,7 +6,7 @@ Using mainly but not only function composition.
 > Next breaking change (v4 candidate)
 >
 > Item: Pipe rework<br>
-> ETA: Q1 2023
+> ETA: Q3 2023
 
 ## Introduction
 This library allows you to write functional and declarative code having the KISS principle in mind.
@@ -132,16 +132,8 @@ given and input it will excecute A, then the result will be the input to execute
 ## Changelog
 
 Latest Release:
-### v3.0.0
-- <b>BREAKING CHANGE</b>:
-  - `take` now is `pick` to keep coherence with other libraries
-- Pump up dev dependencies
-- Modular refactor: split each function in their own file
-- Feature: it should be tree-shakeable now
-- Test: Add tap test
-- Add `engine` requirement to Node >= 17
-- updated readme & changelog
-- improve docs a bit
-- included new section of "next breaking change"
+### v3.0.1
+- <b>HOTFIX</b>: Fixed an important error that prevents correctly importing the library.
+
 
 You can view full changelog here: -> [CHANGELOG](./CHANGELOG.md) <-

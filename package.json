@@ -1,10 +1,11 @@
 {
   "name": "jafl",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Just Antoher Functional Library",
   "funding": "https://github.com/Mystogab/jafl?sponsor=1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [ "/lib" ],
   "scripts": {
     "clean": "rm -Rf ./node_modules & rm yarn.lock & rm -Rf ./lib",
     "build": "tsc",
