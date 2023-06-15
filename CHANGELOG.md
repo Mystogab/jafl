@@ -1,3 +1,6 @@
+### v3.1.0
+- TBD
+
 ### v3.0.1
 - <b>HOTFIX</b>: Fixed an important error that prevents correctly importing the library.
 
