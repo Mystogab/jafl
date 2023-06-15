@@ -132,8 +132,7 @@ given and input it will excecute A, then the result will be the input to execute
 ## Changelog
 
 Latest Release:
-### v3.0.1
-- <b>HOTFIX</b>: Fixed an important error that prevents correctly importing the library.
-
+### v3.1.0
+TBD
 
 You can view full changelog here: -> [CHANGELOG](./CHANGELOG.md) <-
