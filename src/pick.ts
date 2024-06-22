@@ -15,11 +15,11 @@ const _takeSingleProp = (input: any) => (key: string) => {
  * i.e: 
  * obj = { name: 'Some', address: { number: 33, isReal: false }};
  * 
- * tale('name')(obj) // -> 'Some'
+ * pick('name')(obj) // -> 'Some'
  * 
- * take('adress.number')(obj) // -> 33
+ * pick('adress.number')(obj) // -> 33
  * 
- * take('address.number', 'id', 'name')(obj) // -> [33, undefined, 'Some']
+ * pick('address.number', 'id', 'name')(obj) // -> [33, undefined, 'Some']
  * @param key The key or the key path that you want to take
  * @returns {Function} A function that takes and object and return the value of the given key
  */
