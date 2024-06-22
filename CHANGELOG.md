@@ -1,5 +1,9 @@
 ### v3.1.0
-- TBD
+- Updated dev dependencies
+- moved from `yarn` to `npm` package manager
+- move CI from node v18 to v20
+- updated some docs typos
+- deprecated old versions ( < 3.0.1 )
 
 ### v3.0.1
 - <b>HOTFIX</b>: Fixed an important error that prevents correctly importing the library.

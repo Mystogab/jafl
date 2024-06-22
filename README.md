@@ -3,10 +3,11 @@ As the title said, it is just another functional programming library. I always e
 Using mainly but not only function composition.
 
 ### <b>Notes:</b>
-> Next breaking change (v4 candidate)
+> I'm working on a mayor (v4) update, it _probably_ includes a pipe refactor, and a couple of new features like `sleep` function and some initial work for `Immutable` objects. Also improved documentation and tests are a personal goal.<br>
+> Thanks for being patience.
 >
-> Item: Pipe rework<br>
-> ETA: Q3 2023
+> <br>
+> ETA: Q3 2024
 
 ## Introduction
 This library allows you to write functional and declarative code having the KISS principle in mind.
@@ -133,6 +134,10 @@ given and input it will excecute A, then the result will be the input to execute
 
 Latest Release:
 ### v3.1.0
-TBD
+- Updated dev dependencies
+- moved from `yarn` to `npm` package manager
+- move CI from node v18 to v20
+- updated some docs typos
+- deprecated old versions ( < 3.0.1 )
 
 You can view full changelog here: -> [CHANGELOG](./CHANGELOG.md) <-
